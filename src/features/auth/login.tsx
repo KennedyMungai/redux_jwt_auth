@@ -54,6 +54,8 @@ const Login = () => {
             {
                 setErrMsg('Login Failed')
             }
+
+            errRef.current.focus()
 	}
 
 	return <div>Login</div>
