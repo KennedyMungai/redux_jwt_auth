@@ -8,6 +8,13 @@ import { useLoginMutation } from './authApiSlice'
 
 
 const Login = () => {
+    const userRef = useRef()
+	const errRef = useRef()
+	const [user, setUser] = useState('')
+	const [first, setFirst] = useState('')
+	const [errMsg, setErrMsg] = useState('')
+	const navigate = useNavigate()
+    
 	return <div>Login</div>
 }
 
