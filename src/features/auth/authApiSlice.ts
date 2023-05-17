@@ -1,4 +1,3 @@
-import { buildHooks } from '@reduxjs/toolkit/dist/query/react/buildHooks'
 import { apiSlice } from '../../app/api/apiSlice'
 
 export const AuthApiSlice = apiSlice.injectEndpoints({
@@ -12,3 +11,5 @@ export const AuthApiSlice = apiSlice.injectEndpoints({
 		})
 	})
 })
+
+export const { useLoginMutation } = AuthApiSlice
