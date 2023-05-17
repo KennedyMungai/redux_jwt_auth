@@ -28,7 +28,15 @@ const Login = () => {
 	}, [user, pwd])
     
     const handleSubmit = async (e) => {
-		e.preventDefault()
+        e.preventDefault()
+
+		try {
+			const userData = await login({ user, pwd }).unwrap()
+			dispatch(setCredentials(...userData, user))
+			setUser('')
+			setPwd('')
+			navigate('/welcome')
+		} catch (err) {}
 	}
 
 	return <div>Login</div>
