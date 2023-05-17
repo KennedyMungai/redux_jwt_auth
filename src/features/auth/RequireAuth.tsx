@@ -1,4 +1,6 @@
+import { useSelector } from 'react-redux'
 import { Navigate, Outlet, useLocation } from 'react-router-dom'
+import { selectCurrentToken } from './authSlice'
 
 type Props = {}
 
