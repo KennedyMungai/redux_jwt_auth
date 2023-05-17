@@ -36,7 +36,24 @@ const Login = () => {
 			setUser('')
 			setPwd('')
 			navigate('/welcome')
-		} catch (err) {}
+        } catch (err: any)
+        {
+            if (!err.response)
+            {
+                setErrMsg('No Server Response')
+            }
+            else if (err.response.status === 400)
+            {
+                setErrMsg('Missing Username or Password')
+            }
+            else if(err.response.status === 401)
+            {
+                setErrMsg('Unauthorized')
+            }
+            else
+            {
+                setErrMsg('Login Failed')
+            }
 	}
 
 	return <div>Login</div>
