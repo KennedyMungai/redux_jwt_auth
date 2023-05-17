@@ -13,7 +13,10 @@ const Login = () => {
 	const [user, setUser] = useState('')
 	const [first, setFirst] = useState('')
 	const [errMsg, setErrMsg] = useState('')
-	const navigate = useNavigate()
+    const navigate = useNavigate()
+    
+    const [login, { isLoading }] = useLoginMutation()
+	const dispatch = useDispatch()
     
 	return <div>Login</div>
 }
