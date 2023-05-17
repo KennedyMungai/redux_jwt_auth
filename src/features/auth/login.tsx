@@ -28,7 +28,7 @@ const Login = () => {
 	}, [user, pwd])
     
     const handleSubmit = async (e) => {
-        e.preventDefault()
+		e.preventDefault()
 
 		try {
 			const userData = await login({ user, pwd }).unwrap()
@@ -36,27 +36,23 @@ const Login = () => {
 			setUser('')
 			setPwd('')
 			navigate('/welcome')
-        } catch (err: any)
-        {
-            if (!err.response)
-            {
-                setErrMsg('No Server Response')
-            }
-            else if (err.response.status === 400)
-            {
-                setErrMsg('Missing Username or Password')
-            }
-            else if(err.response.status === 401)
-            {
-                setErrMsg('Unauthorized')
-            }
-            else
-            {
-                setErrMsg('Login Failed')
-            }
+		} catch (err: any) {
+			if (!err.response) {
+				setErrMsg('No Server Response')
+			} else if (err.response.status === 400) {
+				setErrMsg('Missing Username or Password')
+			} else if (err.response.status === 401) {
+				setErrMsg('Unauthorized')
+			} else {
+				setErrMsg('Login Failed')
+			}
 
-            errRef.current.focus()
+			errRef.current.focus()
+		}
 	}
+
+	const handleUserInput = (e) => setUser(e.target.value)
+	const handlePwdInput = (e) => setPwd(e.target.value)
 
 	return <div>Login</div>
 }
