@@ -4,6 +4,7 @@ import { selectCurrentToken, selectCurrentUser } from './authSlice'
 
 const Welcome = () => {
     const user = useAppSelector(selectCurrentUser)
+    const token = useAppSelector(selectCurrentToken)
 
 	return <div>Welcome</div>
 }
