@@ -6,6 +6,8 @@ const Welcome = () => {
     const user = useAppSelector(selectCurrentUser)
     const token = useAppSelector(selectCurrentToken)
 
+    const welcome = user ? `Welcome ${user}!` : 'Welcome!'
+
 	return <div>Welcome</div>
 }
 
