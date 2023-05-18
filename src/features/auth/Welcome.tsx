@@ -7,6 +7,7 @@ const Welcome = () => {
     const token = useAppSelector(selectCurrentToken)
 
     const welcome = user ? `Welcome ${user}!` : 'Welcome!'
+    const tokenAbbr = `${token.slice(0, 5)}...${token.slice(-5)}`
 
 	return <div>Welcome</div>
 }
