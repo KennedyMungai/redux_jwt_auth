@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import Public from './components/Public'
-import Login from './features/auth/login'
-import Welcome from './features/auth/Welcome'
 import RequireAuth from './features/auth/RequireAuth'
+import Welcome from './features/auth/Welcome'
+import Login from './features/auth/login'
 
 function App() {
 	return (
